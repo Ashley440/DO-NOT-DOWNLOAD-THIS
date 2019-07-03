@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My form</title>
+        <style>
+            input{
+                margin:0px 0px 0px 40px;
+                font-family: fantasy;
+                font-style: italic;
+                font-size: 20px;
+            }
+            button{
+                margin:0px 0px 0px 40px;
+                font-family: fantasy;
+                font-style: italic;
+                font-size: 20px;
+            }
+            h1{
+                color:red;
+                margin:0px 0px 0px 60px;
+                font-family: fantasy;
+                font-style: italic;
+                text-decoration: underline;
+                font-size: 40px;
+
+            }
+            .btn{
+                background-color: chocolate;
+                color: black;
+                border-radius: 10px;
+                margin: 0px 0px 0px 160px; 
+            }
+           .btn:hover{background-color : white;}
+        
+        </style>
+        <script>
+            function validate(){
+                var email = document.getElementById("email").value;
+                var name = document.getElementById("name").value;
+                var sname = document.getElementById("surname").value;
+                var age =document.getElementById("age").value;
+                var password = document.getElementById("password").value;
+                var cpassword = document.getElementById("confirm_password").value;
+                if(password!=cpassword){
+                    alert("Password do not match")
+                }
+                if (password==cpassword){
+                    var arr = [name,sname,age,email,password,cpassword];
+                    if (arr[4]!="") {
+                        if(arr[5]!=""){
+                           alert("Well done"); 
+                        }
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form >
+            <h1>Fill in the following form</h1>
+            <br>
+            <input id = "name" type = "text"  placeholder="Firstname" required><br><br>
+            <input id = "surname" type = "text"  placeholder="Surname" required><br><br>
+            <input id = "age" type = "number"  placeholder="Age" required><br><br>
+            <input id = "email" type = "email"  placeholder="Email" required><br><br>
+            <input id="password" type = "password" placeholder = "Password" required><br><br>
+            <input id = "confirm_password" type = "password" placeholder = "Confirm Password" required><br><br>
+            <input class = "btn" onclick = "validate()" type = "submit" value = "SUBMIT">
+        </form>
+    </body>
+
+
+</html>
